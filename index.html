@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reklama Sahifasi</title>
+    <!-- Google AdSense skripti -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6001329908678745" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .ad-container {
+            margin: 20px auto;
+        }
+        .timer {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reklamani ko‘ring</h1>
+    <p>Kinoni ko‘rish uchun quyidagi reklamani 15 soniya davomida tomosha qiling:</p>
+
+    <!-- Reklama birligi -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6001329908678745"
+             data-ad-slot="1234567890" <!-- Agar maxsus ad-slot ID bo‘lsa, bu yerni o‘zgartiring -->
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <div class="timer">15</div>
+    <button onclick="alert('Reklama ko‘rildi!')">▶ Reklamani ko‘rdim</button>
+
+    <script>
+        // Oddiy 15 soniyalik taymer misoli
+        let timeLeft = 15;
+        const timerElement = document.querySelector('.timer');
+        const button = document.querySelector('button');
+        button.disabled = true;
+
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                button.disabled = false;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
